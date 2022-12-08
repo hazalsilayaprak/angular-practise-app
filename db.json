@@ -1,0 +1,60 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Happy Birthday!",
+      "day": "May 5th at 1:30am",
+      "icon": "🥰",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Meeting at School",
+      "day": "May 6th at 2:30pm",
+      "icon": "🍫",
+      "reminder": false
+    },
+    {
+      "id": 3,
+      "text": "Food Shopping",
+      "day": "May 7th at 12:30pm",
+      "icon": "🍫",
+      "reminder": true
+    },
+    {
+      "id": 4,
+      "text": "Meeting at School",
+      "day": "May 6th at 2:30pm",
+      "icon": "👍",
+      "reminder": false
+    },
+    {
+      "id": 5,
+      "text": "Doctor Appointment",
+      "day": "May 6th at 9:30am",
+      "icon": "🍫",
+      "reminder": true
+    },
+    {
+      "id": 6,
+      "text": "Dinner at Happy Moon's",
+      "day": "May 8th at 8:00pm",
+      "icon": "🍫",
+      "reminder": false
+    },
+    {
+      "id": 7,
+      "text": "Meeting on Zoom",
+      "day": "May 9th at 8:00am",
+      "icon": "🍫",
+      "reminder": false
+    },
+    {
+      "text": "test",
+      "icon": "😜",
+      "day": "December 9th, 1:20 am",
+      "reminder": true,
+      "id": 8
+    }
+  ]
+}

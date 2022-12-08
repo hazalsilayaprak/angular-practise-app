@@ -1,0 +1,28 @@
+.task-list-item {
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .task-title {
+    margin-bottom: 0px;
+  }
+  .task-date {
+    color: #bbb;
+    font-size: 12px;
+  }
+
+  .task-status {
+    display: flex;
+    align-items: center;
+
+    .ng-fa-icon {
+      margin-right: 8px;
+    }
+  }
+  .icon-select-button {
+    margin-right: 12px;
+    font-size: 20px;
+  }
+}

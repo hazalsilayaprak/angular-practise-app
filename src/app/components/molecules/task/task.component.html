@@ -1,0 +1,61 @@
+<div class="task-list-item">
+  <div class="task-content">
+    <div class="flex _vc">
+      <div>
+        <button
+          mat-icon-button
+          color="warn"
+          (dblclick)="isEmojiPickerVisible = !isEmojiPickerVisible"
+          aria-label="Example icon button with a heart icon"
+          class="icon-select-button"
+        >
+          <span *ngIf="selectedIcon; else icons" class="button-icon">{{
+            selectedIcon
+          }}</span>
+
+          <ng-template #icons>{{ task.icon }} </ng-template>
+        </button>
+        <emoji-mart
+          class="emoji-mart"
+          *ngIf="isEmojiPickerVisible"
+          (emojiSelect)="addEmoji($event, task)"
+          title="Choose your emoji"
+          [style]="{
+            position: 'absolute',
+            top: '55px',
+            left: '0',
+            zIndex: '9'
+          }"
+          appClickedOutside
+          (clickedOutside)="handleChange()"
+        ></emoji-mart>
+      </div>
+
+      <div>
+        <h4 class="task-title">{{ task.text }}</h4>
+        <span class="task-date">{{ task.day }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-status" (click)="onToggle(task)">
+    <fa-icon
+      [icon]="faBell"
+      [ngStyle]="{ color: '#38c172' }"
+      *ngIf="task.reminder; else elseBlock"
+      size="lg"
+    ></fa-icon>
+    <ng-template #elseBlock>
+      <fa-icon
+        [icon]="faBellSlash"
+        [ngStyle]="{ color: '#444b51' }"
+        size="lg"
+      ></fa-icon>
+    </ng-template>
+    <fa-icon
+      [icon]="faTimes"
+      [ngStyle]="{ color: '#e45c48' }"
+      size="lg"
+      (click)="onDelete(task)"
+    ></fa-icon>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
+  <div class="icon-select-field">
+    <div
+      (dblclick)="isEmojiPickerVisible = !isEmojiPickerVisible"
+      class="icon-select-button"
+    >
+      <span *ngIf="selectedIcon; else icons" class="button-icon">{{
+        selectedIcon
+      }}</span>
+
+      <ng-template #icons
+        ><fa-icon [icon]="faIcons" class="button-icon"></fa-icon>
+      </ng-template>
+    </div>
+    <emoji-mart
+      class="emoji-mart"
+      *ngIf="isEmojiPickerVisible"
+      (emojiSelect)="addEmoji($event)"
+      title="Choose your emoji"
+      [style]="{
+        position: 'absolute',
+        top: '0',
+        left: '45px',
+        zIndex: '9'
+      }"
+      appClickedOutside
+      (clickedOutside)="handleChange()"
+    ></emoji-mart>
+  </div>
+  <div class="form-control">
+    <mat-form-field appearance="outline">
+      <mat-label>Task</mat-label>
+      <input
+        matInput
+        placeholder="Add Task"
+        [(ngModel)]="taskText"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </mat-form-field>
+  </div>
+  <div class="form-control">
+    <mat-form-field appearance="outline">
+      <mat-label>Day & Time</mat-label>
+      <input
+        matInput
+        [matDatepicker]="dp"
+        [formControl]="date"
+        [value]="date.value"
+      />
+      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+      <mat-datepicker #dp></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="form-control">
+    <mat-radio-group
+      aria-label=""
+      [(ngModel)]="reminder"
+      [ngModelOptions]="{ standalone: true }"
+    >
+      <mat-label>Set reminder</mat-label>
+      <mat-radio-button [value]="true">Yes</mat-radio-button>
+      <mat-radio-button [value]="false">No</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <button mat-raised-button color="primary">Save Task</button>
+</form>
