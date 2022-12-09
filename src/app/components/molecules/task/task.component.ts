@@ -3,7 +3,9 @@ import { Task } from '../../../Task';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { faBellSlash } from '@fortawesome/free-regular-svg-icons';
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 import { faIcons } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-task',
@@ -15,6 +17,8 @@ export class TaskComponent implements OnInit {
   faBell = faBell;
   faBellSlash = faBellSlash;
   faIcons = faIcons;
+  faCircleCheck = faCircleCheck;
+  faTrashCan = faTrashCan;
 
   selectedIcon: string = '';
   isEmojiPickerVisible: boolean;
@@ -24,6 +28,7 @@ export class TaskComponent implements OnInit {
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
   @Output() onToggleReminderTask: EventEmitter<Task> = new EventEmitter();
   @Output() onTaskIconChange: EventEmitter<Task> = new EventEmitter();
+  @Output() onChangeTaskStatus: EventEmitter<Task> = new EventEmitter();
 
   constructor() {}
 
@@ -39,6 +44,9 @@ export class TaskComponent implements OnInit {
 
   onIconChange(task: any) {
     this.onTaskIconChange.emit(task);
+  }
+  changeTaskStatus(task: any) {
+    this.onChangeTaskStatus.emit(task);
   }
 
   addEmoji(event: any, task: any) {

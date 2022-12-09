@@ -3,5 +3,6 @@ export interface Task {
   text: string;
   day: any;
   reminder: boolean;
+  isCompleted: boolean;
   icon: string;
 }

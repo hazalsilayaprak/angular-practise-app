@@ -32,7 +32,9 @@
       </div>
 
       <div>
-        <h4 class="task-title">{{ task.text }}</h4>
+        <h4 class="task-title" [ngClass]="{ completed: task.isCompleted }">
+          {{ task.text }}
+        </h4>
         <span class="task-date">{{ task.day }}</span>
       </div>
     </div>
@@ -51,8 +53,24 @@
         size="lg"
       ></fa-icon>
     </ng-template>
+
     <fa-icon
-      [icon]="faTimes"
+      [icon]="faCircleCheck"
+      [ngStyle]="{ color: '#38c172' }"
+      *ngIf="!task.isCompleted; else notCompleted"
+      size="lg"
+      (click)="changeTaskStatus(task)"
+    ></fa-icon>
+    <ng-template #notCompleted>
+      <fa-icon
+        [icon]="faTimes"
+        [ngStyle]="{ color: '#e45c48' }"
+        size="lg"
+        (click)="changeTaskStatus(task)"
+      ></fa-icon>
+    </ng-template>
+    <fa-icon
+      [icon]="faTrashCan"
       [ngStyle]="{ color: '#e45c48' }"
       size="lg"
       (click)="onDelete(task)"

@@ -27,6 +27,11 @@ export class TasksComponent implements OnInit {
     this.taskService.updateTaskIcon(task).subscribe();
   }
 
+  toggleChangeStatus(task: Task) {
+    task.isCompleted = !task.isCompleted;
+    this.taskService.updateTaskStatus(task).subscribe();
+  }
+
   deleteTask(task: Task) {
     this.taskService
       .deleteTask(task)

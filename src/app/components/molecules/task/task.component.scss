@@ -1,15 +1,21 @@
 .task-list-item {
-  padding: 12px 0;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  border: 1px solid #eee;
+  margin-bottom: 12px;
+  border-radius: 8px;
 
   .task-title {
     margin-bottom: 0px;
+    &.completed {
+      text-decoration: line-through;
+    }
   }
   .task-date {
-    color: #bbb;
+    color: #aaa;
     font-size: 12px;
   }
 
@@ -18,7 +24,8 @@
     align-items: center;
 
     .ng-fa-icon {
-      margin-right: 8px;
+      margin-right: 16px;
+      cursor: pointer;
     }
   }
   .icon-select-button {

@@ -1,0 +1,44 @@
+$sm: 576px;
+
+@media (max-width: $sm) {
+  .header {
+    padding-bottom: 20px;
+
+    h1 {
+      font-size: 42px !important;
+    }
+
+    .flex {
+      // justify-content: center;
+    }
+  }
+
+  .section-title {
+    // margin-top: 50px;
+  }
+
+  form {
+    h1 {
+      font-size: 28px;
+    }
+  }
+
+  .footer {
+    margin-top: 50px;
+
+    .content {
+      // padding-top: 20px;
+      // padding-right: 15px;
+    }
+  }
+
+  .d-block-mobile {
+    display: block !important;
+  }
+
+  .btn {
+    font-size: 14px;
+    // line-height: 36px;
+    padding: 0 15px;
+  }
+}

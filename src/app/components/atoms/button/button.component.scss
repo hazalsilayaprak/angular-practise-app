@@ -1,0 +1,10 @@
+.button {
+  color: #fff;
+  &.primary {
+    background-image: linear-gradient(to bottom, #ff3f3b, #ff6d38);
+  }
+
+  &.warn {
+    color: #2f363a;
+  }
+}

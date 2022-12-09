@@ -53,6 +53,7 @@ export class AddTaskComponent implements OnInit {
   selectedIcon: string = '';
   taskText: string = '';
   reminder: boolean = false;
+  isCompleted: boolean = false;
   showAddTask: boolean;
   subscription: Subscription;
   faIcons = faIcons;
@@ -78,18 +79,23 @@ export class AddTaskComponent implements OnInit {
     this.isEmojiPickerVisible = false;
   }
 
+  resetForm() {
+    this.taskText = '';
+    this.selectedIcon = '';
+    this.date = new FormControl(moment());
+    this.reminder = false;
+  }
+
   onSubmit() {
     const newTask = {
       text: this.taskText,
       icon: this.selectedIcon,
       day: this.date.value.format('MMMM Do, h:mm a'),
+      isCompleted: this.isCompleted,
       reminder: this.reminder,
     };
 
     this.onAddTask.emit(newTask);
-
-    this.taskText = '';
-    this.date = new FormControl(moment());
-    this.reminder = false;
+    this.resetForm();
   }
 }

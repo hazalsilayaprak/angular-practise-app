@@ -3,4 +3,8 @@
 
 @import "assets/scss/flex";
 @import "assets/scss/variables";
+@import "assets/scss/responsive";
 @import "assets/scss/main";
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";

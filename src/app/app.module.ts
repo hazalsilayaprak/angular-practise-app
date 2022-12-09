@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 
@@ -26,6 +27,7 @@ import { AddTaskComponent } from './components/molecules/add-task/add-task.compo
 import { AboutComponent } from './components/pages/about/about.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { ClickedOutsideDirective } from './directives/clicked-outside.directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: '', component: TasksComponent },
@@ -57,8 +59,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatGridListModule,
     PickerModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -30,6 +30,10 @@ export class TaskService {
     const url = `${this.apiUrl}/${task.id}`;
     return this.http.put<Task>(url, task, httpOptions);
   }
+  updateTaskStatus(task: Task): Observable<Task> {
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.put<Task>(url, task, httpOptions);
+  }
 
   updateTaskIcon(task: Task): Observable<Task> {
     const url = `${this.apiUrl}/${task.id}`;
