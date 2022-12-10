@@ -12,7 +12,7 @@
       "id": 3,
       "text": "Food Shopping",
       "day": "May 7th at 12:30pm",
-      "icon": "🛒",
+      "icon": "🎂",
       "reminder": true,
       "isCompleted": false
     },
@@ -47,14 +47,6 @@
       "icon": "👩‍💻",
       "reminder": true,
       "isCompleted": true
-    },
-    {
-      "text": "test",
-      "icon": "😜",
-      "day": "December 9th, 1:20 am",
-      "reminder": true,
-      "id": 8,
-      "isCompleted": false
     }
   ]
 }
